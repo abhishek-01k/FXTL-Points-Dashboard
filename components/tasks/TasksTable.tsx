@@ -8,7 +8,7 @@ import {
   TableCaption,
 } from '@/components/ui/table';
 import Link from 'next/link';
-import posts from '@/data/posts';
+import tasks from '@/data/tasks';
 import { Task } from '@/types/tasks';
 
 interface PostsTableProps {
@@ -18,7 +18,7 @@ interface PostsTableProps {
 
 const TasksTable = ({ limit, title }: PostsTableProps) => {
   // Sort posts in dec order based on date
-  const sortedPosts: Task[] = [...posts].sort(
+  const sortedPosts: Task[] = [...tasks].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -42,20 +42,20 @@ const TasksTable = ({ limit, title }: PostsTableProps) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {filteredPosts.map((post) => (
-            <TableRow key={post.id}>
-              <TableCell>{post.title}</TableCell>
+          {filteredPosts.map((task) => (
+            <TableRow key={task.id}>
+              <TableCell>{task.title}</TableCell>
               <TableCell className='hidden md:table-cell'>
-                {post.author}
+                {task.author}
               </TableCell>
               <TableCell className='hidden md:table-cell'>
-                {post.points}
+                {task.points}
               </TableCell>
               <TableCell className='text-right hidden md:table-cell'>
-                {post.date}
+                {task.date}
               </TableCell>
               <TableCell>
-                <Link href={`/posts/edit/${post.id}`}>
+                <Link href={`/tasks/edit/${task.id}`}>
                   <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-xs'>
                     Edit
                   </button>

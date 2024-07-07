@@ -15,7 +15,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import posts from '@/data/posts';
+import tasks from '@/data/tasks';
 import { useToast } from '@/components/ui/use-toast';
 
 const formSchema = z.object({
@@ -42,22 +42,22 @@ interface PostEditPageProps {
 const PostEditPage = ({ params }: PostEditPageProps) => {
   const { toast } = useToast();
 
-  const post = posts.find((post) => post.id === params.id);
+  const task = tasks.find((post) => post.id === params.id);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: post?.title || '',
-      body: post?.body || '',
-      author: post?.author || '',
-      date: post?.date || '',
+      title: task?.title || '',
+      body: task?.body || '',
+      author: task?.author || '',
+      date: task?.date || '',
     },
   });
 
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
     toast({
       title: 'Post has been updated successfully',
-      description: `Updated by ${post?.author} on ${post?.date}`,
+      description: `Updated by ${task?.author} on ${task?.date}`,
     });
   };
 
