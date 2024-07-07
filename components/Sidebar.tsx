@@ -27,7 +27,7 @@ const Sidebar = () => {
           </CommandItem>
           <CommandItem>
             <Newspaper className='mr-2 h-4 w-4' />
-            <Link href='/posts'>Posts</Link>
+            <Link href='/tasks'>Tasks</Link>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />

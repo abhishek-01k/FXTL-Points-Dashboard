@@ -23,8 +23,8 @@ const AnalyticsChart = () => {
     <>
       <Card>
         <CardHeader>
-          <CardTitle>Analytics For This Year</CardTitle>
-          <CardDescription>Views Per Month</CardDescription>
+          <CardTitle>Analytics of your points accumulation this year</CardTitle>
+          <CardDescription>Points Per Month</CardDescription>
         </CardHeader>
         <CardContent>
           <div style={{ width: '100%', height: 300 }}>

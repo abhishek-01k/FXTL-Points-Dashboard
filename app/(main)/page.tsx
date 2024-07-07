@@ -1,6 +1,6 @@
 "use client"
 import DashboardCard from '@/components/dashboard/DashboardCard';
-import PostsTable from '@/components/posts/PostsTable';
+import TasksTable from '@/components/tasks/TasksTable';
 import AnalyticsChart from '@/components/dashboard/AnalyticsChart';
 import { Folder, MessageCircle, Newspaper, User } from 'lucide-react';
 import { createThirdwebClient } from 'thirdweb';
@@ -69,13 +69,12 @@ export default function Home() {
           icon={<Folder className='text-slate-500' size={72} />}
         />
         <DashboardCard
-          title='Users'
-          count={750}
+          title='Total Users'
+          count={33432}
           icon={<User className='text-slate-500' size={72} />}
         />
       </div>
       <AnalyticsChart />
-      <PostsTable title='Latest Posts' limit={5} />
     </>
   );
 }
